@@ -14,10 +14,6 @@ galleryEl.insertAdjacentHTML("afterbegin", galleryItem);
 
 let gallery = new SimpleLightbox(".gallery a");
 
-const onGalleryItemClick = function (e) {
-  e.preventDefault();
-  gallery.options.captionType = "title";
+gallery.on("show.simplelightbox", function () {
   gallery.options.captionDelay = 250;
-};
-
-galleryEl.addEventListener("click", onGalleryItemClick);
+});
